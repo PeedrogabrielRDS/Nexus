@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus · Planejamento Estratégico</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div id="reading-progress"></div>
+<div id="sidebar-overlay"></div>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div id="sidebar-logo">Nexus<span>·</span></div>
+  <a class="sidebar-item" href="#sec1"><span class="sidebar-num">01</span> Visão Geral</a>
+  <a class="sidebar-item" href="#sec2"><span class="sidebar-num">02</span> UX</a>
+  <a class="sidebar-item" href="#sec3"><span class="sidebar-num">03</span> UI</a>
+  <a class="sidebar-item" href="#sec4"><span class="sidebar-num">04</span> Funcionalidades</a>
+  <a class="sidebar-item" href="#sec5"><span class="sidebar-num">05</span> Diferenciais</a>
+  <a class="sidebar-item" href="#sec6"><span class="sidebar-num">06</span> Retenção</a>
+  <a class="sidebar-item" href="#sec7"><span class="sidebar-num">07</span> Monetização</a>
+  <a class="sidebar-item" href="#sec8"><span class="sidebar-num">08</span> Estrutura</a>
+  <a class="sidebar-item" href="#sec9"><span class="sidebar-num">09</span> Mobile</a>
+  <a class="sidebar-item" href="#sec10"><span class="sidebar-num">10</span> Tecnologias</a>
+  <a class="sidebar-item" href="#sec11"><span class="sidebar-num">11</span> Performance</a>
+  <a class="sidebar-item" href="#sec12"><span class="sidebar-num">12</span> Lançamento</a>
+  <a class="sidebar-item" href="#sec13"><span class="sidebar-num">13</span> Concorrentes</a>
+  <a class="sidebar-item" href="#sec14"><span class="sidebar-num">14</span> Roadmap</a>
+  <a class="sidebar-item" href="#sec15"><span class="sidebar-num">15</span> Conclusão</a>
+</nav>
+
+<div class="doc-root">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-badge"><span class="cover-dot"></span> Documento Estratégico Confidencial</div>
+  <h1>Nexus<span>.</span><br>Chat Platform</h1>
+  <div class="cover-sub">Planejamento Completo de Produto · UX/UI · Growth · Monetização</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><label>Versão</label><span>2.0 — Supabase Edition</span></div>
+    <div class="cover-meta-item"><label>Tipo</label><span>Startup Strategy Brief</span></div>
+    <div class="cover-meta-item"><label>Classificação</label><span>Nível Sênior</span></div>
+    <div class="cover-meta-item"><label>Seções</label><span>15 Seções</span></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<div class="sticky-nav">
+  <button id="menu-btn">☰ Índice</button>
+  <a class="nav-pill" href="#sec1">01 Visão</a>
+  <a class="nav-pill" href="#sec2">02 UX</a>
+  <a class="nav-pill" href="#sec3">03 UI</a>
+  <a class="nav-pill" href="#sec4">04 Features</a>
+  <a class="nav-pill" href="#sec5">05 Diferenciais</a>
+  <a class="nav-pill" href="#sec6">06 Retenção</a>
+  <a class="nav-pill" href="#sec7">07 Monetização</a>
+  <a class="nav-pill" href="#sec8">08 Estrutura</a>
+  <a class="nav-pill" href="#sec9">09 Mobile</a>
+  <a class="nav-pill" href="#sec10">10 Tech</a>
+  <a class="nav-pill" href="#sec11">11 Performance</a>
+  <a class="nav-pill" href="#sec12">12 Lançamento</a>
+  <a class="nav-pill" href="#sec13">13 Concorrentes</a>
+  <a class="nav-pill" href="#sec14">14 Roadmap</a>
+  <a class="nav-pill" href="#sec15">15 Conclusão</a>
+</div>
+
+<!-- SEARCH -->
+<div id="doc-search-bar">
+  <span>🔍</span>
+  <input type="text" id="doc-search" placeholder="Pesquisar no documento...">
+  <span id="search-count" style="font-size:11px;color:var(--nexus-gray);"></span>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">Índice do Documento</div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#sec1"><span class="toc-num">01</span> Visão Geral do Projeto<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec9"><span class="toc-num">09</span> Experiência Mobile<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec2"><span class="toc-num">02</span> UX — User Experience<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec10"><span class="toc-num">10</span> Tecnologias Recomendadas<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec3"><span class="toc-num">03</span> UI — User Interface<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec11"><span class="toc-num">11</span> Performance e Escalabilidade<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec4"><span class="toc-num">04</span> Funcionalidades Essenciais<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec12"><span class="toc-num">12</span> Estratégia de Lançamento<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec5"><span class="toc-num">05</span> Diferenciais Revolucionários<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec13"><span class="toc-num">13</span> Diferenciais vs. Concorrentes<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec6"><span class="toc-num">06</span> Retenção e Crescimento<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec14"><span class="toc-num">14</span> Cronograma de Desenvolvimento<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec7"><span class="toc-num">07</span> Monetização<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec15"><span class="toc-num">15</span> Conclusão e Estratégia Final<span class="toc-dots"></span></a>
+    <a class="toc-item" href="#sec8"><span class="toc-num">08</span> Estrutura do Site<span class="toc-dots"></span></a>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 1 -->
+<!-- ============================== -->
+<div class="section section-anchor" id="sec1">
+  <div class="section-header">
+    <div class="section-num-block">01</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Fundação do Projeto</div>
+      <div class="section-title">Visão Geral do Projeto</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Nome e Conceito da Plataforma</div>
+    <div class="highlight highlight-violet">
+      <strong>NEXUS</strong> — a plataforma onde comunidades se conectam, identidades se expressam e conversas viram cultura. O nome evoca conexão, nós de rede, ponto central de encontro. Simples, global, memorável.
+    </div>
+    <p>Nexus é uma plataforma social de comunicação em tempo real que combina o melhor do Discord (comunidades e salas), do Twitter/X (feed social e viralização), do Reddit (discussões organizadas) e do BeReal (autenticidade). O diferencial é uma camada de identidade expressiva e gamificação profunda que nenhum concorrente atual oferece de forma integrada.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Público-Alvo Ideal</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">🎮</div><div class="card-title">Gen Z Digital Nativo (16–24)</div><div class="card-desc">Busca expressão de identidade, comunidades de nicho, estética premium e experiências sociais únicas.</div></div>
+      <div class="card"><div class="card-icon">🎨</div><div class="card-title">Criadores de Conteúdo (18–30)</div><div class="card-desc">Precisa de audiência, monetização e ferramentas de comunidade. Foge do algoritmo opressor do Instagram.</div></div>
+      <div class="card"><div class="card-icon">💻</div><div class="card-title">Tech & Startup (20–35)</div><div class="card-desc">Quer comunicação eficiente, integração de ferramentas e ambiente profissional mas humano.</div></div>
+      <div class="card"><div class="card-icon">🎭</div><div class="card-title">Comunidades de Nicho</div><div class="card-desc">Fandoms, jogadores, artistas, estudantes — grupos que precisam de espaços próprios e personalizáveis.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Diferencial Competitivo e Efeito de Rede</div>
+    <table class="doc-table">
+      <thead><tr><th>Pilar</th><th>O que significa na prática</th><th>Por que é único</th></tr></thead>
+      <tbody>
+        <tr><td>Identidade Viva</td><td>Perfis são "mundos" personalizáveis com música, bio animada, coleções</td><td>Nenhuma plataforma faz isso com esta profundidade</td></tr>
+        <tr><td>Comunidades com Camadas</td><td>Servidores públicos + privados + sub-círculos internos + eventos</td><td>Hierarquia social que replica o mundo real</td></tr>
+        <tr><td>Reputação Portátil</td><td>XP, conquistas e badges seguem o usuário entre comunidades</td><td>Motivação contínua para criar e engajar</td></tr>
+        <tr><td>Conteúdo Efêmero + Permanente</td><td>Stories que somem + posts que ficam no histórico da comunidade</td><td>Combina urgência e legado</td></tr>
+        <tr><td>Efeito de Rede Acelerado</td><td>Convites multiplicam XP do convidante. Comunidades crescem juntas</td><td>Incentivo direto ao crescimento viral</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Por que as pessoas usariam diariamente?</div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-violet">✦</span><strong>FOMO social:</strong> Streams e eventos ao vivo nas comunidades que você participa acontecem agora</li>
+      <li><span class="fl-dot fl-dot-teal">✦</span><strong>Progressão de identidade:</strong> Seu perfil evolui visivelmente com uso — tem "conquistas" que expiram se você para</li>
+      <li><span class="fl-dot fl-dot-amber">✦</span><strong>Recompensas diárias:</strong> Login streak, missões diárias, surpresas aleatórias (loot drops de cosméticos)</li>
+      <li><span class="fl-dot fl-dot-blue">✦</span><strong>Pertencimento real:</strong> Você tem um "rank" na sua comunidade. Pessoas te conhecem pelo nome</li>
+      <li><span class="fl-dot fl-dot-violet">✦</span><strong>Conteúdo dinâmico:</strong> Feed personalizado que nunca repete — misto de amigos, comunidades e descobertas</li>
+    </ul>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 2 -->
+<div class="section section-anchor" id="sec2">
+  <div class="section-header">
+    <div class="section-num-block">02</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Design de Experiência</div>
+      <div class="section-title">UX — User Experience</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Jornada do Usuário — Primeiro Acesso até Habituação</div>
+    <table class="doc-table">
+      <thead><tr><th>Fase</th><th>Momento</th><th>Objetivo</th><th>Mecanismo</th></tr></thead>
+      <tbody>
+        <tr><td>Descoberta</td><td>Dia 0</td><td>Hook imediato</td><td>Landing page cinematográfica, vídeo de 15s mostrando a plataforma "viva"</td></tr>
+        <tr><td>Cadastro</td><td>0–3 min</td><td>Fricção mínima</td><td>SSO (Google/Apple) + 3 perguntas de interesse = perfil inicial gerado automaticamente</td></tr>
+        <tr><td>Onboarding</td><td>3–15 min</td><td>Primeira vitória</td><td>Tutorial gamificado que recompensa com badge exclusivo "Pioneiro"</td></tr>
+        <tr><td>Ativação</td><td>Dia 1</td><td>Primeira conexão real</td><td>Match de comunidades por interesse + notificação de boas-vindas de membros</td></tr>
+        <tr><td>Retorno</td><td>Dia 2–7</td><td>Formar hábito</td><td>Streak de 3 dias = recompensa desbloqueada visível no perfil</td></tr>
+        <tr><td>Habituação</td><td>Semana 2+</td><td>Dependência positiva</td><td>O usuário tem "papéis" na comunidade, amigos, histórico de conquistas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Técnicas Psicológicas de Retenção Aplicadas</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-title">Variável de Recompensa</div><div class="card-desc">Como caça-níqueis: drops de cosméticos aleatórios ao atingir marcos. Nunca se sabe o que vai ganhar — cria antecipação constante.</div></div>
+      <div class="card"><div class="card-title">Progresso Nunca Perde</div><div class="card-desc">XP acumulado nunca diminui. A sensação de "construir algo" previne abandono. Mesmo inativo, seu perfil mantém o histórico.</div></div>
+      <div class="card"><div class="card-title">Reciprocidade Social</div><div class="card-desc">Quando alguém te menciona ou reage à sua mensagem, você recebe notificação com rosto/avatar — obrigação emocional de responder.</div></div>
+      <div class="card"><div class="card-title">Escassez Temporal</div><div class="card-desc">Eventos e badges com data de expiração. "Este badge só existe até domingo às 23h59" — urgência real.</div></div>
+      <div class="card"><div class="card-title">Consistência de Identidade</div><div class="card-desc">Quanto mais o usuário customiza o perfil, mais ele se identifica com a plataforma. Custo afetivo de sair aumenta.</div></div>
+      <div class="card"><div class="card-title">Efeito Zeigarnik</div><div class="card-desc">Missões incompletas são exibidas no dashboard. O cérebro é programado para fechar loops abertos — o usuário retorna para completar.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Microinterações e Feedback Visual</div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Envio de mensagem:</strong> Bolha aparece com animação suave de expansão + ondulação de som (opcional)</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Reação com emoji:</strong> Emoji flutua até a mensagem com curva de bezier natural antes de encaixar</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Conquista desbloqueada:</strong> Overlay fullscreen por 0.8s com partículas douradas e som de fanfarra</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Usuário digitando:</strong> Indicador pulsante que muda de velocidade conforme velocidade real de digitação</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Loading de chat:</strong> Skeleton screens com shimmer — nunca tela em branco</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Conexão perdida:</strong> Barra sutil no topo, não popup intrusivo. Reconecta silenciosamente</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Hover em avatar:</strong> Minicard desliza suavemente com info do usuário + botão de DM rápido</li>
+      <li><span class="fl-dot fl-dot-violet">→</span><strong>Transição de sala:</strong> Fade com blur de 200ms — nunca flash branco abrupto</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Como Reduzir Abandono — Anti-Churn Framework</div>
+    <div class="highlight highlight-teal">
+      <strong>Regra dos 7 segundos:</strong> Se o usuário não vê algo interessante em 7 segundos após abrir o app, ele fecha. A tela inicial deve sempre mostrar atividade recente nas comunidades do usuário, notificações pendentes e um elemento surpresa (drop do dia, missão nova).
+    </div>
+    <p>Identificar usuários em risco: inatividade de 48h dispara email personalizado com "você recebeu 3 menções" + preview das mensagens que esperaram. 72h: notificação push com badge exclusivo de retorno. 7 dias: oferta de 7 dias premium grátis ativada com um clique.</p>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 3 -->
+<div class="section section-anchor" id="sec3">
+  <div class="section-header">
+    <div class="section-num-block">03</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Identidade Visual</div>
+      <div class="section-title">UI — User Interface</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Paleta de Cores Principal <span style="font-size:11px;font-weight:400;color:var(--nexus-gray)">(clique para copiar o hex)</span></div>
+    <div class="palette">
+      <div class="swatch" onclick="copyHex('#0f0e17')"><div class="swatch-color" style="background:#0f0e17;"></div><div class="swatch-info"><div class="swatch-name">Nexus Ink</div><div class="swatch-hex">#0f0e17</div></div></div>
+      <div class="swatch" onclick="copyHex('#6c47ff')"><div class="swatch-color" style="background:#6c47ff;"></div><div class="swatch-info"><div class="swatch-name">Electric Violet</div><div class="swatch-hex">#6c47ff</div></div></div>
+      <div class="swatch" onclick="copyHex('#0d9488')"><div class="swatch-color" style="background:#0d9488;"></div><div class="swatch-info"><div class="swatch-name">Deep Teal</div><div class="swatch-hex">#0d9488</div></div></div>
+      <div class="swatch" onclick="copyHex('#f0f0f5')"><div class="swatch-color" style="background:#f0f0f5;border:1px solid #e5e7eb;"></div><div class="swatch-info"><div class="swatch-name">Cloud Surface</div><div class="swatch-hex">#f0f0f5</div></div></div>
+      <div class="swatch" onclick="copyHex('#d97706')"><div class="swatch-color" style="background:#d97706;"></div><div class="swatch-info"><div class="swatch-name">XP Gold</div><div class="swatch-hex">#d97706</div></div></div>
+      <div class="swatch" onclick="copyHex('#e05c3e')"><div class="swatch-color" style="background:#e05c3e;"></div><div class="swatch-info"><div class="swatch-name">Live Coral</div><div class="swatch-hex">#e05c3e</div></div></div>
+      <div class="swatch" onclick="copyHex('#1a1a2e')"><div class="swatch-color" style="background:#1a1a2e;"></div><div class="swatch-info"><div class="swatch-name">Dark Abyss</div><div class="swatch-hex">#1a1a2e</div></div></div>
+      <div class="swatch" onclick="copyHex('#a78bfa')"><div class="swatch-color" style="background:#a78bfa;"></div><div class="swatch-info"><div class="swatch-name">Soft Violet</div><div class="swatch-hex">#a78bfa</div></div></div>
+    </div>
+    <div class="highlight highlight-violet">
+      <strong>Impacto psicológico das cores:</strong> Violet (#6c47ff) = criatividade, confiança tecnológica, premium. Teal (#0d9488) = calma, foco, comunidade. Gold (#d97706) = conquista, escassez, valor. Coral (#e05c3e) = urgência, ao vivo, atenção. O dark mode (#0f0e17/#1a1a2e) reduz fadiga ocular em uso prolongado e dá sensação de exclusividade premium.
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Sistema de Design — Componentes Chave</div>
+    <table class="doc-table">
+      <thead><tr><th>Componente</th><th>Especificação</th><th>Decisão de Design</th></tr></thead>
+      <tbody>
+        <tr><td>Tipografia Display</td><td>Clash Display / Neue Haas Grotesk, 500–700</td><td>Personalidade forte, diferente do Inter genérico</td></tr>
+        <tr><td>Tipografia Body</td><td>Inter Variable ou DM Sans, 14–16px, line-height 1.6</td><td>Alta legibilidade em telas longas</td></tr>
+        <tr><td>Border Radius</td><td>Cards: 16px, Botões: 10px, Avatares: 50%, Mensagens: 18px</td><td>Suavidade sem parecer infantil</td></tr>
+        <tr><td>Sombras</td><td>Somente elevation shadows: 0 4px 24px rgba(0,0,0,0.08)</td><td>Profundidade sem poluição visual</td></tr>
+        <tr><td>Glassmorphism</td><td>Sidebar flutuante: backdrop-filter: blur(20px) + bg rgba(255,255,255,0.05)</td><td>Modernidade seletiva — não excessiva</td></tr>
+        <tr><td>Grid</td><td>8px base unit. Spacing: 8, 16, 24, 32, 48, 64px</td><td>Consistência matemática em todos os espaços</td></tr>
+        <tr><td>Botão Primário</td><td>Fundo #6c47ff, texto branco, hover: escurece 8%, pressão: scale(0.97)</td><td>Feedback físico de clique</td></tr>
+        <tr><td>Mensagens</td><td>Minhas: direita, #6c47ff, radius: 18 2 18 18. Delas: esquerda, surface escura</td><td>Distingue visualmente sem esforço cognitivo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Dark Mode Premium — O Padrão da Plataforma</div>
+    <p>O dark mode não é uma opção — é o estado padrão e mais trabalhado da plataforma. Pesquisas mostram que 82% dos usuários de chat preferem dark mode. A hierarquia de profundidade usa 3 tons: fundo (#0f0e17), superfícies (#1a1a2e), cards elevados (#22213a). Texto: #ffffff (principal), #a0a0b8 (secundário), #5a5a7a (desabilitado).</p>
+    <div class="highlight highlight-blue">
+      <strong>Gradientes de destaque:</strong> Hero section: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #0f0e17 100%). Badges premium: linear-gradient(90deg, #d97706, #f59e0b). Botão CTA especial: linear-gradient(135deg, #6c47ff, #0d9488).
+    </div>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 4 -->
+<div class="section section-anchor" id="sec4">
+  <div class="section-header">
+    <div class="section-num-block">04</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Produto</div>
+      <div class="section-title">Funcionalidades Essenciais</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Core Features — Obrigatórias no MVP</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-title"><span class="badge badge-violet">Core</span> Chat em Tempo Real</div><div class="card-desc">Mensagens instantâneas com WebSocket. Suporte a texto, imagens, GIFs, links com preview automático e arquivos até 50MB.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-violet">Core</span> Comunidades (Servidores)</div><div class="card-desc">Espaços com canais de texto, voz, eventos. Hierarquia de papéis customizável: Owner, Admin, Moderador, Membro, Visitante.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-violet">Core</span> Perfil Expressivo</div><div class="card-desc">Avatar animado ou estático, banner de perfil, bio com links, status personalizado, coleção de badges, XP e nível visível.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-violet">Core</span> DMs Privadas</div><div class="card-desc">Mensagens diretas 1:1 e grupos de até 20 pessoas. Criptografia end-to-end. Indicador de digitação e confirmação de leitura.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-violet">Core</span> Sistema de Amigos</div><div class="card-desc">Pedidos de amizade, lista de amigos online, histórico de DMs, sugestões por interesses em comum.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-teal">Social</span> Feed de Atividade</div><div class="card-desc">Timeline cronológica + algoritmo de posts das comunidades. Diferencia "Em alta", "Recente" e "Para você".</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-teal">Social</span> Reações Expressivas</div><div class="card-desc">8 reações nativas + emojis customizados por comunidade (Premium). Contador animado ao passar o mouse.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-amber">Gamif.</span> XP e Níveis</div><div class="card-desc">Pontos por: mensagens enviadas, posts curtidos, novos membros convidados, participação em eventos. 50 níveis com títulos únicos.</div></div>
+      <div class="card"><div class="card-title"><span class="badge badge-amber">Gamif.</span> Conquistas & Badges</div><div class="card-desc">120+ badges desbloqueáveis. Alguns raros (só existiram por 24h). Exibidos no perfil e nas mensagens como ícone ao lado do nome.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Funcionalidades Modernas e Virais</div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-violet">★</span><strong>Nexus Moments:</strong> Stories de 24h para comunidades — conteúdo efêmero que cria urgência de visualização</li>
+      <li><span class="fl-dot fl-dot-teal">★</span><strong>Salas de Voz Temáticas:</strong> Canais de áudio sempre ativos com limite de participantes — como um café virtual com mesa de amigos</li>
+      <li><span class="fl-dot fl-dot-amber">★</span><strong>Eventos Ao Vivo:</strong> Streams dentro da comunidade com chat paralelo, reações em tempo real e replay</li>
+      <li><span class="fl-dot fl-dot-blue">★</span><strong>Threads Visuais:</strong> Respostas aninhadas com identação visual — debate organizado sem parecer fórum antigo</li>
+      <li><span class="fl-dot fl-dot-violet">★</span><strong>Painéis de Comunidade:</strong> Dashboard público mostrando membros online, posts em alta, próximos eventos — convida não-membros a entrar</li>
+      <li><span class="fl-dot fl-dot-teal">★</span><strong>Marketplace de Temas:</strong> Usuários criam e vendem temas de cor para comunidades. Criador ganha 70% da venda</li>
+      <li><span class="fl-dot fl-dot-amber">★</span><strong>Onboarding Guiado por IA:</strong> Sistema recomenda 5 comunidades ideais no cadastro com base em interesses declarados e comportamento inicial</li>
+    </ul>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 5 -->
+<div class="section section-anchor" id="sec5">
+  <div class="section-header">
+    <div class="section-num-block">05</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Inovação de Produto</div>
+      <div class="section-title">Diferenciais Revolucionários</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Ideias de Alto Potencial de Viralização</div>
+
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">
+        💜 Conceito 1 — "Aura do Perfil" <span class="collapsible-arrow">▾</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="highlight highlight-violet">Uma visualização de aura colorida ao redor do avatar que muda conforme a atividade recente, humor declarado e conquistas. Usuários muito ativos têm aura pulsante e brilhante. Usuários inativos têm aura apagada. Isso cria status visual imediato e desejo de manter a aura bonita.</div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">
+        🟢 Conceito 2 — "Nexus Drops" <span class="collapsible-arrow">▾</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="highlight highlight-teal">A cada semana, um "drop" de cosmético exclusivo é lançado (como Supreme do streetwear). Disponível por apenas 72 horas. Quem tiver, sempre terá — e isso aparece no perfil com timestamp. FOMO massivo + colecionismo.</div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">
+        🟡 Conceito 3 — "Echos" <span class="collapsible-arrow">▾</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="highlight highlight-amber">Mensagens que "repercutem" — como um RT do Twitter, mas visual. Quando você replica uma mensagem, ela aparece no seu perfil como "ecoada por você" com crédito ao original. Incentiva curadoria e descoberta.</div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">
+        🔵 Conceito 4 — "Hype Rooms" <span class="collapsible-arrow">▾</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="highlight highlight-blue">Salas temporárias criadas para eventos com contador regressivo público. Quando o contador zera, a sala some do ar. Conteúdo pode virar "cápsula do tempo" acessível apenas por quem participou. Urgência extrema de participação.</div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">
+        🌿 Conceito 5 — "Mapas de Comunidade" <span class="collapsible-arrow">▾</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="highlight highlight-green">Visualização gráfica dos membros de uma comunidade como nós de rede. Quem está conectado com quem. Clusters de amizade visíveis. Permite descobrir pessoas por "graus de separação". Altamente compartilhável como screenshot.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Mecânicas de Engajamento Inovadoras</div>
+    <table class="doc-table">
+      <thead><tr><th>Mecânica</th><th>Como funciona</th><th>Psicologia por trás</th></tr></thead>
+      <tbody>
+        <tr><td>Rival de XP</td><td>Sistema mostra "você está 340 XP atrás de [amigo]" no perfil dele</td><td>Competição saudável entre amigos</td></tr>
+        <tr><td>Legado de Post</td><td>Posts com 1000+ reações viram "Patrimônio da Comunidade" — imortalizados no hall</td><td>Status duradouro, incentivo à criação</td></tr>
+        <tr><td>Missões Colaborativas</td><td>A comunidade inteira precisa gerar 10.000 reações para desbloquear um badge coletivo</td><td>Cooperação que cria senso de equipe</td></tr>
+        <tr><td>Modo Foco</td><td>Usuário declara "foco de 45 min" — chat fica em silêncio, ao final recebe XP bônus</td><td>Funcionalidade de bem-estar que gera lealdade</td></tr>
+        <tr><td>Heatmap de Atividade</td><td>Histórico de contribuições estilo GitHub — grid de dias com intensidade de cor</td><td>Visibilidade da consistência, orgulho de streak</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 6 -->
+<div class="section section-anchor" id="sec6">
+  <div class="section-header">
+    <div class="section-num-block">06</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Growth Engineering</div>
+      <div class="section-title">Retenção e Crescimento</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Framework de Retenção em 3 Horizontes</div>
+    <table class="doc-table">
+      <thead><tr><th>Horizonte</th><th>Gatilho</th><th>Mecanismo</th><th>Meta</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-blue">Diário</span></td><td>Streak de login, missões, drops</td><td>Notificação push às 9h com "sua missão de hoje"</td><td>DAU/MAU > 40%</td></tr>
+        <tr><td><span class="badge badge-teal">Semanal</span></td><td>Ranking semanal, drop exclusivo, evento de comunidade</td><td>Email toda sexta com "seu resumo da semana + oportunidade de badge"</td><td>WAU/MAU > 65%</td></tr>
+        <tr><td><span class="badge badge-violet">Mensal</span></td><td>Level up, conquista mensal, relatório de atividade</td><td>Wrap mensal visual (tipo Spotify Wrapped) compartilhável</td><td>Churn &lt; 8%/mês</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Estratégias Inspiradas em Plataformas de Sucesso</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-title">📺 Do TikTok</div><div class="card-desc">Feed infinito na aba "Descobrir" com conteúdo de comunidades desconhecidas. Algoritmo aprende em tempo real pelo comportamento de scroll.</div></div>
+      <div class="card"><div class="card-title">🎮 Do Discord</div><div class="card-desc">Salas de voz sempre ativas, papéis e permissões granulares, bots com comandos customizados para comunidades.</div></div>
+      <div class="card"><div class="card-title">🏆 Do Duolingo</div><div class="card-desc">Streaks com ícone de fogo que todos veem no perfil. Perder o streak é doloroso — missão de recuperação paga com Nexus Coins.</div></div>
+      <div class="card"><div class="card-title">🌊 Do Twitch</div><div class="card-desc">Sub badges que crescem com o tempo. Quem está há 6 meses tem badge diferente de quem está há 1 mês — lealdade visível e recompensada.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Onboarding Viciante — Os Primeiros 15 Minutos</div>
+    <p>O usuário recém-cadastrado não vê um formulário. Ele vê uma experiência: pergunta 1 de 5 sobre interesses com animação de "construção de perfil" em tempo real. Ao final, perfil pré-populado + 3 comunidades recomendadas + badge "Recém-chegado" já no perfil. Primeira mensagem enviada = +50 XP com animação de confetti. Isso ancora o usuário emocionalmente antes do primeiro encerramento de sessão.</p>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 7 -->
+<div class="section section-anchor" id="sec7">
+  <div class="section-header">
+    <div class="section-num-block">07</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Modelo de Negócio</div>
+      <div class="section-title">Monetização</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Planos de Assinatura</div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-header" style="background: var(--nexus-gray-light); color: var(--nexus-ink);">
+          <div class="plan-name">Nexus Free</div>
+          <div class="plan-price">R$0 <span class="plan-price-period">/mês</span></div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-feature"><span class="plan-check">✓</span> Chat ilimitado</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Até 5 comunidades</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> 1 tema de perfil</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Upload até 8MB</div>
+          <div class="plan-feature" style="color:#9ca3af;">✗ Sem badge premium</div>
+          <div class="plan-feature" style="color:#9ca3af;">✗ Sem emojis custom</div>
+        </div>
+      </div>
+      <div class="plan-card" style="border: 2px solid var(--nexus-violet);">
+        <div class="plan-header" style="background: var(--nexus-violet); color: white;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;background:rgba(255,255,255,0.2);display:inline-block;padding:2px 10px;border-radius:20px;margin-bottom:6px;">MAIS POPULAR</div>
+          <div class="plan-name" style="color:white;">Nexus Plus</div>
+          <div class="plan-price" style="color:white;">R$19 <span class="plan-price-period">/mês</span></div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-feature"><span class="plan-check">✓</span> Tudo do Free</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Comunidades ilimitadas</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Badge de assinante visível</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Emojis e stickers exclusivos</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Upload até 100MB</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Acesso antecipado a drops</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header" style="background: var(--nexus-ink); color: white;">
+          <div class="plan-name" style="color: #d97706;">Nexus Elite</div>
+          <div class="plan-price" style="color: white;">R$49 <span class="plan-price-period">/mês</span></div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-feature"><span class="plan-check">✓</span> Tudo do Plus</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Criar comunidades ilimitadas</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Dashboard de analytics</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Aura dourada exclusiva</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Suporte prioritário</div>
+          <div class="plan-feature"><span class="plan-check">✓</span> Early access de features</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Outras Fontes de Receita</div>
+    <table class="doc-table">
+      <thead><tr><th>Fonte</th><th>Modelo</th><th>Potencial Estimado</th></tr></thead>
+      <tbody>
+        <tr><td>Nexus Coins (moeda interna)</td><td>Pacotes de R$5 a R$100. Usados para cosméticos, boosters de XP, recuperação de streak</td><td>30% da receita — alta margem</td></tr>
+        <tr><td>Marketplace de Criadores</td><td>Temas, emojis, stickers criados por usuários. Nexus fica 30% de cada venda</td><td>Escala com crescimento da base</td></tr>
+        <tr><td>Comunidades Verificadas</td><td>Marcas e criadores pagam R$299/mês por selo, analytics avançado e prioridade no algoritmo</td><td>B2B recorrente</td></tr>
+        <tr><td>Boost de Comunidade</td><td>Membros pagam para "boostear" sua comunidade, que ganha mais visibilidade e slots de emojis</td><td>Modelo Discord Nitro adaptado</td></tr>
+        <tr><td>Publicidade Nativa</td><td>Posts patrocinados no feed "Descobrir" — apenas para usuários Free, jamais no chat</td><td>Não invasivo, preserva UX premium</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 8 -->
+<div class="section section-anchor" id="sec8">
+  <div class="section-header">
+    <div class="section-num-block">08</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Arquitetura de Produto</div>
+      <div class="section-title">Estrutura do Site</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Hierarquia de Páginas e Rotas</div>
+    <table class="doc-table">
+      <thead><tr><th>Rota</th><th>Página</th><th>Público</th><th>Função</th></tr></thead>
+      <tbody>
+        <tr><td>/</td><td>Landing Page</td><td>Todos</td><td>Conversão de novos usuários</td></tr>
+        <tr><td>/app</td><td>Dashboard</td><td>Logado</td><td>Hub central — feed, notificações, atalhos</td></tr>
+        <tr><td>/app/chat/:id</td><td>Chat (DM/Grupo)</td><td>Logado</td><td>Conversa em tempo real</td></tr>
+        <tr><td>/app/community/:slug</td><td>Comunidade</td><td>Logado</td><td>Canais, membros, eventos</td></tr>
+        <tr><td>/app/discover</td><td>Descobrir</td><td>Logado</td><td>Feed algorítmico + busca de comunidades</td></tr>
+        <tr><td>/app/profile/:username</td><td>Perfil Público</td><td>Todos</td><td>Página social compartilhável</td></tr>
+        <tr><td>/app/settings</td><td>Configurações</td><td>Logado</td><td>Conta, privacidade, notificações, aparência</td></tr>
+        <tr><td>/app/premium</td><td>Upgrade</td><td>Logado</td><td>Conversão para planos pagos</td></tr>
+        <tr><td>/app/marketplace</td><td>Loja</td><td>Logado</td><td>Cosméticos, temas, itens com Coins</td></tr>
+        <tr><td>/app/notifications</td><td>Notificações</td><td>Logado</td><td>Central de alertas organizados</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Navegação Principal — Layout App</div>
+    <p>Layout de 3 colunas no desktop: Sidebar esquerda estreita (ícones de comunidade + nav global) → Coluna central (conteúdo principal: chat, feed, perfil) → Painel direito contextual (membros online, threads, infos da comunidade). No mobile: bottom navigation bar com 5 ícones + swipe lateral para abrir sidebar.</p>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 9 — MOBILE (antiga seção 10) -->
+<div class="section section-anchor" id="sec9">
+  <div class="section-header">
+    <div class="section-num-block">09</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Mobile First</div>
+      <div class="section-title">Experiência Mobile</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Princípios de UI Mobile-First</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-title">Bottom Navigation Bar</div><div class="card-desc">5 ícones fixos: Home, Descobrir, Chat, Notificações, Perfil. Nenhuma navegação por hamburger — tudo a um polegar.</div></div>
+      <div class="card"><div class="card-title">Gestos Nativos</div><div class="card-desc">Swipe para arquivar DM, long-press para reações, pull-to-refresh com animação de "carregando aura". Touch targets mínimos de 48×48px.</div></div>
+      <div class="card"><div class="card-title">Safe Area Respeitada</div><div class="card-desc">Conteúdo nunca esconde atrás do notch ou home indicator. Input de chat sobe com o teclado sem quebrar o layout.</div></div>
+      <div class="card"><div class="card-title">Performance Agressiva</div><div class="card-desc">Imagens em WebP/AVIF. Mensagens com virtualização (só renderiza visíveis). First Contentful Paint &lt; 1.5s em 4G.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Adaptações Específicas para Mobile</div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-violet">📱</span>Sidebar de comunidades: Sheet panel que sobe do fundo com swipe, não drawer lateral</li>
+      <li><span class="fl-dot fl-dot-violet">📱</span>Perfil: Layout vertical com banner, avatar centralizado, bio e tabs (Posts, Conquistas, Comunidades)</li>
+      <li><span class="fl-dot fl-dot-violet">📱</span>Chat: Bolhas de mensagem ocupam até 78% da largura. Input com toolbar inline (sem ícones pequenos demais)</li>
+      <li><span class="fl-dot fl-dot-violet">📱</span>Notificações: Agrupadas por comunidade, não spam individual. Expandíveis com tap</li>
+      <li><span class="fl-dot fl-dot-violet">📱</span>Haptic Feedback: Vibração sutil ao enviar mensagem, conquista desbloqueada, reação recebida</li>
+    </ul>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 10 — TECH STACK (antiga seção 11, com Supabase e sem Fastify) -->
+<div class="section section-anchor" id="sec10">
+  <div class="section-header">
+    <div class="section-num-block">10</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Stack Técnico</div>
+      <div class="section-title">Tecnologias Recomendadas</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Stack Completo com Justificativas</div>
+    <div class="highlight highlight-teal" style="margin-bottom:16px;">
+      <strong>🟢 Stack Supabase-first:</strong> O backend é construído em torno do Supabase como plataforma central — eliminando a necessidade de um servidor de API dedicado para a maioria dos casos, com Row Level Security (RLS), Realtime built-in e Auth nativo. O Node.js custom fica apenas para lógica de WebSocket de chat e workers de processamento.
+    </div>
+
+    <div class="tech-row">
+      <div class="tech-category">Frontend</div>
+      <div class="tech-name">Next.js 14 (App Router)</div>
+      <div class="tech-reason">SSR para SEO de perfis públicos, RSC para performance, Image optimization nativo. Maior ecossistema React.</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Estilização</div>
+      <div class="tech-name">Tailwind CSS + Radix UI</div>
+      <div class="tech-reason">Velocidade de desenvolvimento. Radix UI garante acessibilidade nos componentes sem reinventar a roda.</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Animações</div>
+      <div class="tech-name">Framer Motion</div>
+      <div class="tech-reason">Animações físicas e gestos touch com API declarativa. Muito mais fácil que CSS puro para microinterações.</div>
+    </div>
+    <div class="tech-row" style="background: rgba(62,207,142,0.05); border-radius: 8px; padding: 10px 12px; margin: 4px 0;">
+      <div class="tech-category">BaaS / Backend</div>
+      <div class="tech-name"><span class="supabase-badge">⚡ Supabase</span></div>
+      <div class="tech-reason">PostgreSQL gerenciado + Auth nativo (SSO Google/Apple/Discord) + Realtime subscriptions + Storage + Edge Functions. Substitui PostgreSQL + Prisma + servidor de auth — uma única plataforma com SDK TypeScript.</div>
+      <div class="tech-tag tech-tag-new">Novo</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Tempo Real</div>
+      <div class="tech-name">Supabase Realtime + Socket.io</div>
+      <div class="tech-reason">Supabase Realtime cobre presença, notificações e updates de dados via WebSocket nativo. Socket.io custom apenas para o chat de alta frequência com Redis Pub/Sub multi-servidor.</div>
+      <div class="tech-tag tech-tag-changed">Atualizado</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Banco de Dados</div>
+      <div class="tech-name">PostgreSQL via Supabase</div>
+      <div class="tech-reason">PostgreSQL gerenciado com RLS (Row Level Security) aplicado direto no banco — segurança de dados sem camada extra. Migrations via Supabase CLI. Tipagem gerada automaticamente com supabase gen types.</div>
+      <div class="tech-tag tech-tag-changed">Atualizado</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Autenticação</div>
+      <div class="tech-name">Supabase Auth</div>
+      <div class="tech-reason">SSO com Google/Apple/Discord, magic links, OTP, sessões JWT — nativo e integrado ao banco. Zero configuração extra de segurança.</div>
+      <div class="tech-tag tech-tag-changed">Atualizado</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Cache/Session</div>
+      <div class="tech-name">Redis (Upstash)</div>
+      <div class="tech-reason">Rate limiting, dados de presença online, cache de listas quentes. Latência &lt; 1ms para dados voláteis.</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Armazenamento</div>
+      <div class="tech-name">Supabase Storage + Cloudflare Images</div>
+      <div class="tech-reason">Supabase Storage para avatares e assets da plataforma (integrado com RLS). Cloudflare Images para resize on-the-fly e CDN global de imagens de usuário.</div>
+      <div class="tech-tag tech-tag-changed">Atualizado</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">API Workers</div>
+      <div class="tech-name">Supabase Edge Functions</div>
+      <div class="tech-reason">Deno-based serverless functions co-locadas com o banco para lógica de negócio (webhooks, XP, badges). Sem servidor Node dedicado para operações simples.</div>
+      <div class="tech-tag tech-tag-new">Novo</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Busca</div>
+      <div class="tech-name">Meilisearch</div>
+      <div class="tech-reason">Busca full-text com typo tolerance em &lt; 50ms. Relevância configurável por comunidade e popularidade.</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Deploy</div>
+      <div class="tech-name">Vercel (Frontend) + Railway (Socket Server)</div>
+      <div class="tech-reason">Vercel = edge network + preview URLs automáticas. Railway só para o servidor WebSocket de chat. Todo o resto roda no Supabase.</div>
+      <div class="tech-tag tech-tag-changed">Simplificado</div>
+    </div>
+    <div class="tech-row">
+      <div class="tech-category">Monitoramento</div>
+      <div class="tech-name">Sentry + PostHog</div>
+      <div class="tech-reason">Sentry captura erros em produção. PostHog para analytics de produto (funnels, cohorts, feature flags).</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Vantagens do Stack Supabase-First</div>
+    <div class="card-grid">
+      <div class="card" style="border-left: 3px solid #3ecf8e;">
+        <div class="card-title">Menos infraestrutura</div>
+        <div class="card-desc">Auth, banco, storage e realtime em uma plataforma. Sem gerenciar múltiplos serviços separados nos primeiros 12 meses.</div>
+      </div>
+      <div class="card" style="border-left: 3px solid #3ecf8e;">
+        <div class="card-title">Segurança nativa</div>
+        <div class="card-desc">Row Level Security no PostgreSQL garante que cada usuário vê só os dados que deve ver — direto no banco, não no código.</div>
+      </div>
+      <div class="card" style="border-left: 3px solid #3ecf8e;">
+        <div class="card-title">Tipagem automática</div>
+        <div class="card-desc">supabase gen types gera os tipos TypeScript a partir do schema real — zero dessincronia entre banco e código.</div>
+      </div>
+      <div class="card" style="border-left: 3px solid #3ecf8e;">
+        <div class="card-title">Open Source</div>
+        <div class="card-desc">Supabase é open source. Pode migrar para self-hosted quando escalar. Sem lock-in de vendor.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 11 — PERFORMANCE -->
+<div class="section section-anchor" id="sec11">
+  <div class="section-header">
+    <div class="section-num-block">11</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Engenharia</div>
+      <div class="section-title">Performance e Escalabilidade</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Metas de Performance</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-title">FCP &lt; 1.2s</div><div class="card-desc">First Contentful Paint. Crítico para retenção: cada 100ms adicional = 1% de abandono a mais.</div></div>
+      <div class="card"><div class="card-title">LCP &lt; 2.5s</div><div class="card-desc">Largest Contentful Paint. Core Web Vital do Google — impacta SEO de perfis públicos.</div></div>
+      <div class="card"><div class="card-title">Mensagem &lt; 100ms</div><div class="card-desc">Latência de entrega de mensagem. Acima de 200ms o usuário percebe delay e a experiência degrada.</div></div>
+      <div class="card"><div class="card-title">10.000+ usuários simultâneos</div><div class="card-desc">Escalabilidade horizontal com Redis + múltiplas instâncias do servidor WebSocket via Socket.io adapter.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Estratégias Técnicas de Performance</div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>Virtualização de listas:</strong> react-virtual renderiza só mensagens visíveis. Histórico de 10.000 mensagens sem lag</li>
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>Lazy loading inteligente:</strong> Imagens carregam conforme scroll. Emojis e stickers são sprites CSS para zero requests extras</li>
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>Otimistic UI:</strong> Mensagem aparece instantaneamente no client antes da confirmação do servidor. Falha = rollback silencioso</li>
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>Cache agressivo:</strong> Listas de membros, info de comunidade, perfis públicos cacheados no Redis por 30 segundos</li>
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>WebSocket heartbeat:</strong> Ping a cada 25s. Detecção de desconexão em &lt; 3s com reconexão automática exponential backoff</li>
+      <li><span class="fl-dot fl-dot-teal">⚡</span><strong>Edge Functions:</strong> Rotas de API críticas (presença, feed) no Supabase Edge Functions / Cloudflare Workers — latência global &lt; 50ms</li>
+    </ul>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 12 — LANÇAMENTO -->
+<div class="section section-anchor" id="sec12">
+  <div class="section-header">
+    <div class="section-num-block">12</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Go-to-Market</div>
+      <div class="section-title">Estratégia de Lançamento</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Pré-lançamento (6 semanas antes)</div>
+    <div class="highlight highlight-violet">
+      <strong>Landing page com lista de espera + exclusividade:</strong> "Apenas os primeiros 10.000 usuários ganham acesso vitalício ao plano Plus." Cria escassez real. Contador público de vagas. Compartilhar = sobe na fila (sistema de referral de waitlist como Robinhood usou).
+    </div>
+    <ul class="feature-list">
+      <li><span class="fl-dot fl-dot-violet">🚀</span>Criar 5 contas de TikTok/Reels mostrando features únicas em formato "você sabia que?" — content viral antes do lançamento</li>
+      <li><span class="fl-dot fl-dot-violet">🚀</span>Parcerias com 10–20 criadores de nicho (5k–50k seguidores) para beta exclusivo — mais confiável que influenciadores grandes</li>
+      <li><span class="fl-dot fl-dot-violet">🚀</span>Comunidade no próprio Nexus (beta fechado) onde influenciadores já estão ativos — prova social antes do lançamento</li>
+      <li><span class="fl-dot fl-dot-violet">🚀</span>Product Hunt launch com kit de assets para a comunidade votar — meta: Top 3 do dia</li>
+    </ul>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Pós-lançamento — Growth Loops</div>
+    <table class="doc-table">
+      <thead><tr><th>Loop</th><th>Mecanismo</th><th>Virialidade</th></tr></thead>
+      <tbody>
+        <tr><td>Perfil Compartilhável</td><td>nexus.app/@usuario é uma página bonita e pública — compartilhável no Twitter/Instagram</td><td>Cada perfil = anúncio orgânico da plataforma</td></tr>
+        <tr><td>Wrap Mensal</td><td>Imagem gerada automaticamente com "seus dados de abril no Nexus" — compartilhável</td><td>Viral em toda base de usuários mensalmente</td></tr>
+        <tr><td>Convite de Comunidade</td><td>Links de convite rastreáveis + quem convida ganha XP bônus</td><td>Incentivo direto ao crescimento da base</td></tr>
+        <tr><td>Conquistas Raras</td><td>Badge "Fundador" para primeiros 1.000 usuários — exposição permanente no perfil</td><td>Status que atrai outros a querer entrar logo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 13 — CONCORRENTES -->
+<div class="section section-anchor" id="sec13">
+  <div class="section-header">
+    <div class="section-num-block">13</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Inteligência Competitiva</div>
+      <div class="section-title">Diferenciais vs. Concorrentes</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Análise Comparativa de Mercado</div>
+    <div class="comp-grid">
+      <div class="comp-cell comp-header">Critério</div>
+      <div class="comp-cell comp-header">Concorrentes</div>
+      <div class="comp-cell comp-header">Oportunidade</div>
+      <div class="comp-cell comp-header">Nexus</div>
+
+      <div class="comp-cell">Identidade de Usuário</div>
+      <div class="comp-cell"><span class="comp-bad">Básica</span> — Discord tem nome+avatar simples, Reddit é anônimo, Twitter tem 160 chars bio</div>
+      <div class="comp-cell">Perfis são "mundos" que as pessoas constroem com amor e não querem abandonar</div>
+      <div class="comp-cell comp-nexus">Aura, banner animado, conquistas, heatmap, coleções — perfil vivo</div>
+
+      <div class="comp-cell">Gamificação</div>
+      <div class="comp-cell"><span class="comp-bad">Fragmentada</span> — Duolingo faz bem mas não é chat. Discord tem levels como bot terceiro</div>
+      <div class="comp-cell">Plataforma de chat com gamificação nativa e integrada em toda a experiência</div>
+      <div class="comp-cell comp-nexus">XP, níveis, badges, streaks, drops, missões — tudo nativo e integrado</div>
+
+      <div class="comp-cell">Descoberta Social</div>
+      <div class="comp-cell"><span class="comp-bad">Fraca</span> — Discord requer link de convite. Reddit é por subreddit. Twitter é caótico</div>
+      <div class="comp-cell">Feed de descoberta com algoritmo + perfis públicos compartilháveis</div>
+      <div class="comp-cell comp-nexus">Aba Descobrir algorítmica + mapa de comunidades + perfis públicos bonitos</div>
+
+      <div class="comp-cell">Monetização de Criadores</div>
+      <div class="comp-cell"><span class="comp-bad">Limitada</span> — Discord não paga criadores de conteúdo. Reddit tem awards mas nada sólido</div>
+      <div class="comp-cell">Marketplace onde criadores ganham com temas, emojis, conteúdo exclusivo</div>
+      <div class="comp-cell comp-nexus">Marketplace nativo com split 70/30 para criadores de cosméticos</div>
+
+      <div class="comp-cell">UX Móvel</div>
+      <div class="comp-cell"><span class="comp-bad">Medíocre</span> — Discord mobile é versão reduzida do desktop. Reddit mobile é lento</div>
+      <div class="comp-cell">App nativo mobile-first com gestos, haptics e performance agressiva</div>
+      <div class="comp-cell comp-nexus">Mobile-first com PWA + app nativo. UX projetada para polegar, não mouse</div>
+    </div>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 14 — ROADMAP com checklist interativo -->
+<div class="section section-anchor" id="sec14">
+  <div class="section-header">
+    <div class="section-num-block">14</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Planejamento</div>
+      <div class="section-title">Cronograma de Desenvolvimento</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Roadmap — 18 Meses</div>
+    <div class="roadmap">
+      <div class="roadmap-phase">
+        <div class="roadmap-line-col"><div class="roadmap-circle" style="background:#6c47ff;">1</div><div class="roadmap-vline"></div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase-title">MVP — Fundação <span class="badge badge-violet">Meses 1–3</span></div>
+          <div class="roadmap-phase-time">Foco: Chat funcional, cadastro, comunidades básicas, perfil</div>
+          <div class="roadmap-items">
+            <span class="roadmap-item" onclick="toggleDone(this)">Autenticação SSO</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Chat em tempo real</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Criação de comunidades</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Perfil básico</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">DMs</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Upload de imagens</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-line-col"><div class="roadmap-circle" style="background:#0d9488;">2</div><div class="roadmap-vline"></div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase-title">Engajamento — Gamificação <span class="badge badge-teal">Meses 4–6</span></div>
+          <div class="roadmap-phase-time">Foco: Sistema de XP, badges, streaks, onboarding viciante</div>
+          <div class="roadmap-items">
+            <span class="roadmap-item" onclick="toggleDone(this)">Sistema XP + Níveis</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">60 badges iniciais</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Streak de login</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Missões diárias</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Onboarding gamificado</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Feed de descoberta</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-line-col"><div class="roadmap-circle" style="background:#d97706;">3</div><div class="roadmap-vline"></div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase-title">Monetização — Receita <span class="badge badge-amber">Meses 7–10</span></div>
+          <div class="roadmap-phase-time">Foco: Planos Premium, Nexus Coins, Marketplace inicial</div>
+          <div class="roadmap-items">
+            <span class="roadmap-item" onclick="toggleDone(this)">Plano Plus (R$19)</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Plano Elite (R$49)</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Nexus Coins</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Drops semanais</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Marketplace (beta)</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Analytics de criadores</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-line-col"><div class="roadmap-circle" style="background:#e05c3e;">4</div><div class="roadmap-vline"></div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase-title">Escala — Crescimento <span class="badge badge-coral">Meses 11–14</span></div>
+          <div class="roadmap-phase-time">Foco: Features virais, mobile app nativo, parcerias B2B</div>
+          <div class="roadmap-items">
+            <span class="roadmap-item" onclick="toggleDone(this)">App iOS + Android</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Salas de voz</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Hype Rooms</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Aura de perfil</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Nexus Wrap mensal</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Comunidades verificadas</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-line-col"><div class="roadmap-circle" style="background:#16a34a;">5</div></div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase-title">Maturidade — Plataforma <span class="badge badge-green">Meses 15–18</span></div>
+          <div class="roadmap-phase-time">Foco: API pública, bots, integrações, internacionalização</div>
+          <div class="roadmap-items">
+            <span class="roadmap-item" onclick="toggleDone(this)">API pública para devs</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Sistema de bots</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Integração Webhooks</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Internacionalização</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Eventos pagos</span>
+            <span class="roadmap-item" onclick="toggleDone(this)">Nexus for Teams (B2B)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--nexus-gray);margin-top:8px;">💡 Clique em qualquer item do roadmap para marcar como concluído.</p>
+  </div>
+</div>
+
+<div class="doc-divider"></div>
+
+<!-- SECTION 15 — CONCLUSÃO -->
+<div class="section section-anchor" id="sec15">
+  <div class="section-header">
+    <div class="section-num-block">15</div>
+    <div class="section-title-group">
+      <div class="section-eyebrow">Síntese Estratégica</div>
+      <div class="section-title">Conclusão e Estratégia Final</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">As 5 Apostas Mais Importantes</div>
+    <div class="card-grid">
+      <div class="card" style="border-left: 3px solid #6c47ff;"><div class="card-title">1. Identidade como Produto</div><div class="card-desc">O perfil é o coração do Nexus. Usuários não saem porque têm "coisas" no perfil — conquistas, aura, coleções. Custo emocional de migrar é alto.</div></div>
+      <div class="card" style="border-left: 3px solid #0d9488;"><div class="card-title">2. Mobile-First Radical</div><div class="card-desc">80% dos usuários acessam por celular. Cada feature deve ser desenhada mobile primeiro, desktop depois — nunca o contrário.</div></div>
+      <div class="card" style="border-left: 3px solid #d97706;"><div class="card-title">3. Comunidade como Distribuição</div><div class="card-desc">Cada comunidade traz seus próprios membros. Ferramentas para admins (analytics, eventos, temas) atraem líderes de comunidade que trazem milhares.</div></div>
+      <div class="card" style="border-left: 3px solid #e05c3e;"><div class="card-title">4. Criadores como Parceiros</div><div class="card-desc">Marketplace 70/30. Criadores que ganham dinheiro no Nexus promovem o Nexus. É distribuição paga indiretamente.</div></div>
+      <div class="card" style="border-left: 3px solid #16a34a;"><div class="card-title">5. Dados para Personalização</div><div class="card-desc">Quanto mais dados, melhor o feed, melhor a recomendação de comunidades, melhor o onboarding. O produto melhora com uso — flywheel de dados.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Erros Críticos a Evitar</div>
+    <div class="highlight highlight-amber">
+      <strong>🚫 Erros que matam plataformas sociais:</strong><br><br>
+      1. Lançar sem massa crítica de usuários — resolva com waitlist exclusiva e beta com criadores ativos.<br>
+      2. Monetizar cedo demais com ads invasivos — destrói confiança e percepção de qualidade irrecuperável.<br>
+      3. Features demais no MVP — execute perfeitamente 5 features em vez de fazer 20 medíocres.<br>
+      4. Ignorar moderação e segurança — um escândalo de segurança no início mata tudo. Invista em moderação desde o dia 1.<br>
+      5. Copiar o Discord sem razão — se o usuário não tem motivo claro para migrar, não migra. O diferencial precisa ser óbvio em 10 segundos.
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Visão de Longo Prazo</div>
+    <p>Em 5 anos, o Nexus não é apenas um app de chat. É a infraestrutura social onde comunidades existem, se organizam, monetizam e crescem. A plataforma se torna o sistema operacional das comunidades digitais — com APIs abertas, um ecossistema de bots e integrações, e um marketplace bilionário de identidade digital.</p>
+    <div class="highlight highlight-teal">
+      <strong>A métrica que importa acima de tudo:</strong> NPS (Net Promoter Score) &gt; 60. Usuários que recomendam organicamente são mais valiosos do que qualquer campanha paga. Construa um produto que as pessoas amem genuinamente — tudo mais decorre disso.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top: 1px solid var(--nexus-line); padding-top: 24px; margin-top: 32px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="font-family: 'DM Serif Display', Georgia, serif; font-size: 20px; color: var(--nexus-ink);">Nexus <span style="color: #6c47ff;">·</span></div>
+    <div style="font-size: 11px; color: var(--nexus-gray); text-align: right;">Documento Estratégico Completo v2.0<br>15 Seções · Stack Supabase-First</div>
+  </div>
+</div>
+
+</div><!-- end .doc-root -->
+
+<!-- HEX TOOLTIP -->
+<div class="hex-tooltip" id="hex-tooltip"></div>
+
+<script src="./script.js"></script>
+</body>
+</html>
